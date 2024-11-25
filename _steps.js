@@ -1,6 +1,6 @@
 
 /**
- * creating a post api on the server side such as: const newUser = req.body; newUser.id = users.length + 1;users.push(newUser); send: res.send(newUser)
+ * creating a post api on the server side such as: const newUser = req.body; newUser.id = users.length + 1;users.push(newUser); send: res.send(newUser) just below mongodb await client.connect()
  * Client side -----------------------------------start
  * Send data via post from client side such as below{
  * Set fetch method inside fetch option (second parameter)
