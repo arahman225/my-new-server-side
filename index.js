@@ -15,21 +15,23 @@ app.get('/', (req, res) => {
     res.send('Hi, wolrd')
 })
 
-app.use(cors())
 app.use(express.json())
+
+app.use(cors())
+app.post('/users',(req, res) =>{
+    console.log('Api hitting')
+    console.log(req.body)
+    const newUser = req.body;
+    newUser.id = users.length +1;
+    users.push(newUser)
+    res.send(newUser)
+})
 
 app.get('/users',(req, res) =>{
     res.send(users)
 })
 
-app.post('/users',(req, res) =>{
-    console.log('Api hitting');
-    console.log(req.body)
-    const newUser = req.body;
-    newUser.id = users.length + 1;
-    users.push(newUser);
-    res.send(newUser)
-})
+
 
 app.listen(port, () => {
     console.log(`Running on the port ${port}`)
